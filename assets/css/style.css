@@ -1,16 +1,21 @@
-h2 {
-  position:absolute;
-  font-size: 500px;
-  align-content: center;
-  width: 280px;
-  background-color: #ffffff;
-  padding: 10px;
-}
-
-
 .headimg {
   width: 100%;
   position: fixed;
+  position: sticky;
   margin: 0 auto;
   top: 0;
+}
+
+.container {
+  margin-top: 0px;
+}
+
+h3 {
+  display: inline;
+  margin: 10px;
+}
+
+.jumbotron {
+  align-content: center;
+  margin: 10px;
 }

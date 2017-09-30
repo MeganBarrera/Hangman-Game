@@ -29,9 +29,7 @@
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
 	<div class="row">
-		<div class="blanks"></div>
 		<div class="answerArray"></div>
-		<div class="word"></div>
 	</div>
 <br></br>
 	<div class="row">
@@ -46,77 +44,37 @@
 		<h2 class="text-center">Losses:</h2>
 			<div id="losses"></div>
 		<h2 class="text-center">Guesses Left:</h2>
-			<div id="remainingLetters"></div>
 			<div id="guesses"></div>
 		<h2 class="text-center">Your Guesses So Far:</h2>
 			<div id="display"></div>
-		
 	</div>
-</div>
 
+</div>
 <script type="text/javascript">
 $(document).ready(function(){
-	var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  	for (var i = 0; i < letters.length; i++) {
-
-        var letterBtn = $("<button>");
-        letterBtn.addClass("letter-button letter");
-        letterBtn.attr("data-letter", letters[i]);
-        letterBtn.text(letters[i]);
-        $("#buttons").append(letterBtn);
-
-     };
-
-      $(".letter-button").on("click", function() {
-
-        var fridgeMagnet = $("<div>");
-        fridgeMagnet.addClass("letter fridge-color");
-        fridgeMagnet.text($(this).attr("data-letter"));
-        $("#display").append(fridgeMagnet);
-
-      });
-
-      $("#clear").on("click", function() {
-        $("#display").empty();
-    });
-
-	var words = ["JAYHAWKS", "BASKETBALL", "ROCKCHALK", "NAISMITH"];
+var words = ["JAYHAWKS", "BASKETBALL", "ROCKCHALK", "NAISMITH"];
 		var word = words[Math.floor(Math.random()*words.length)];
-		return word; 
-	});
-	var setupAnswerArray = function () {
 	var answerArray = ["_","_","_","_","_","_","_","_"];
 		for (var i=0; i<word.length;i++) {
 			var answerArray = $("div");
 			answerArray.addClass("answerArray");
 			answerArray[i]="_";
-			return answerArray;
+			$(".letters").append(answerArray)
 		};
 		var remainingLetters = word.length;
 			while (remainingLetters > 0) {
-				document.write(answerArray);
-		var updateGameState = function (guesses, word, answerArray) {
-				for (var j = 0; j < word.length; j++) {
+				document.write(answerArray.join(" "));
+
+				for (var j=0; j<word.length; j++) {
 					if (word[j] === guess) {
 						answerArray[j] = guess;
 						remainingLetters--;
 					};
-		var word = pickWord();
-		var answerArray = setupAnswerArray("#word");
-					};
 				};
+			};
 
-			}};
 
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
